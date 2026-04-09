@@ -1,0 +1,264 @@
+axes:
+  - id: wolnosc_odpowiedzialnosc
+    left: Wolność
+    right: Odpowiedzialność
+    description: Napięcie między swobodą działania a ciężarem skutków dla innych.
+
+  - id: lojalnosc_prawda
+    left: Lojalność
+    right: Prawda
+    description: Napięcie między ochroną relacji a odsłonięciem faktów.
+
+  - id: skutecznosc_uczciwosc
+    left: Skuteczność
+    right: Uczciwość
+    description: Napięcie między dowiezieniem wyniku a przejrzystością drogi.
+
+  - id: ambicja_sluzba
+    left: Ambicja
+    right: Służba
+    description: Napięcie między własnym rozwojem i wpływem a dobrem wspólnym.
+
+  - id: tozsamosc_otwartosc
+    left: Tożsamość
+    right: Otwartość
+    description: Napięcie między ochroną własnego dziedzictwa a przyjęciem inności.
+
+  - id: sumienie_reguly
+    left: Sumienie
+    right: Reguły
+    description: Napięcie między żywym rozeznaniem a porządkiem procedur.
+
+dilemmas:
+  - id: d_wolnosc_01
+    axis_id: wolnosc_odpowiedzialnosc
+    axis_left: Wolność
+    axis_right: Odpowiedzialność
+    title: Ctrl+C / Ctrl+V z AI
+    scenario: >
+      Masz przygotować ważną analizę strategiczną. Narzędzie AI tworzy tekst,
+      który brzmi profesjonalnie i pewnie. Możesz wysłać go niemal od razu,
+      oszczędzając czas i wysiłek. Nie masz jednak pewności, czy źródła,
+      skróty myślowe i wnioski zostały naprawdę sprawdzone.
+    choice_prompt: >
+      Gdzie w tej sytuacji bliżej Ci dziś?
+    cost_question: >
+      Jeśli wybierasz wolność od trudu weryfikacji, jaką cenę płaci Twoja odpowiedzialność
+      za każde wypowiedziane i napisane słowo? A jeśli wybierasz pełną odpowiedzialność,
+      jaką cenę płaci Twoja swoboda działania i tempo?
+    hidden_cost_left: >
+      Swoboda może stać się wygodą, która przerzuca ryzyko błędu na innych.
+    hidden_cost_right: >
+      Odpowiedzialność może zamienić się w paraliż, który odbiera sprawczość.
+    bias_warning_left: >
+      Czy szybkość nie podszywa się tutaj pod kompetencję?
+    bias_warning_right: >
+      Czy ostrożność nie staje się wygodnym usprawiedliwieniem bezruchu?
+    mentor_prompt: >
+      Czy bardziej chronisz tu jakość słowa, czy własny spokój?
+    bridge_prompt: >
+      Jak spojrzałby na ten wybór ktoś młody, przyzwyczajony do pracy z AI?
+      Jak spojrzałby ktoś starszy, który wie, ile kosztuje jeden niezweryfikowany błąd?
+    tags_left:
+      - swoboda
+      - tempo
+      - wygoda
+      - zaufanie_do_narzedzia
+    tags_right:
+      - odpowiedzialnosc_za_slowo
+      - weryfikacja
+      - rzetelnosc
+      - konsekwencje
+
+  - id: d_lojalnosc_01
+    axis_id: lojalnosc_prawda
+    axis_left: Lojalność
+    axis_right: Prawda
+    title: Błąd w zespole
+    scenario: >
+      Odkrywasz, że bliski współpracownik popełnił błąd merytoryczny w ważnym raporcie.
+      Przyznanie się do tego osłabi pozycję Waszego zespołu w trudnym momencie.
+      Zamilczenie ochroni wspólnotę teraz, ale pozostawi fałsz w obiegu.
+    choice_prompt: >
+      Gdzie w tej sytuacji bliżej Ci dziś?
+    cost_question: >
+      Wybierając lojalność wobec zespołu, jaką cenę płaci prawda? A jeśli wybierasz
+      pełną prawdę, jaką cenę płaci relacja i zaufanie wewnątrz wspólnoty?
+    hidden_cost_left: >
+      Ochrona zespołu może stać się zgodą na zniekształcenie rzeczywistości.
+    hidden_cost_right: >
+      Ujawnienie faktów może zostać przeżyte jako porzucenie człowieka.
+    bias_warning_left: >
+      Czy lojalność nie stała się tutaj unikaniem konfliktu?
+    bias_warning_right: >
+      Czy prawda nie daje Ci tutaj wygodnej przewagi moralnej?
+    mentor_prompt: >
+      Co naprawdę próbujesz ocalić: człowieka, wspólnotę, prawdę czy obraz samego siebie?
+    bridge_prompt: >
+      Jak opisałby ten wybór ktoś młodszy, który dopiero buduje lojalność?
+      Jak opisałby go ktoś starszy, kto już raz zapłacił cenę za milczenie albo za odsłonięcie prawdy?
+    tags_left:
+      - relacja
+      - wspolnota
+      - ochrona
+      - solidarnosc
+    tags_right:
+      - prawda
+      - jawnosc
+      - odpowiedzialnosc
+      - ryzyko_konfliktu
+
+  - id: d_skutecznosc_01
+    axis_id: skutecznosc_uczciwosc
+    axis_left: Skuteczność
+    axis_right: Uczciwość
+    title: Skrót technologiczny
+    scenario: >
+      Możesz szybciej uruchomić ważny proces cyfryzacji, używając uproszczonego mechanizmu
+      zbierania danych. Rozwiązanie jest legalne, ale nie do końca przejrzyste dla ludzi,
+      których dotyczy. Pełna transparentność spowolni projekt o miesiące.
+    choice_prompt: >
+      Gdzie w tej sytuacji bliżej Ci dziś?
+    cost_question: >
+      Gdy wybierasz skuteczność wyniku, jaką cenę płaci uczciwość drogi?
+      A jeśli wybierasz pełną uczciwość procedury, jaką cenę płaci tempo i możliwość wdrożenia?
+    hidden_cost_left: >
+      Skuteczność może ocalić projekt, ale osłabić zaufanie tych, którym miał służyć.
+    hidden_cost_right: >
+      Uczciwość procedury może zachować integralność, ale zostawić problem bez rozwiązania na dłużej.
+    bias_warning_left: >
+      Czy skuteczność nie stała się tu tylko bardziej elegancką nazwą dla skrótu?
+    bias_warning_right: >
+      Czy uczciwość nie stała się tu formą czystości, która unika odpowiedzialności za rezultat?
+    mentor_prompt: >
+      Co w tej sytuacji ważniejsze: dowieźć zmianę czy zachować czystość drogi?
+    bridge_prompt: >
+      Jak widzi to ktoś wychowany w świecie presji na wynik?
+      A jak ktoś, kto pamięta, jak długo odbudowuje się utracone zaufanie?
+    tags_left:
+      - wynik
+      - sprawczosc
+      - pragmatyzm
+      - presja_czasu
+    tags_right:
+      - przejrzystosc
+      - integralnosc
+      - zaufanie
+      - uczciwosc_procedury
+
+  - id: d_ambicja_01
+    axis_id: ambicja_sluzba
+    axis_left: Ambicja
+    axis_right: Służba
+    title: Prestiż czy lokalna odpowiedzialność
+    scenario: >
+      Otrzymujesz propozycję roli, która daje prestiż, wpływ i wejście do świata,
+      gdzie podejmuje się duże decyzje. W tym samym czasie w Twoim lokalnym środowisku
+      jesteś jedną z niewielu osób, które naprawdę mogą pomóc młodym ludziom przejść
+      przez czas chaosu, samotności i niepewności.
+    choice_prompt: >
+      Gdzie w tej sytuacji bliżej Ci dziś?
+    cost_question: >
+      Jeśli wybierasz ambicję i rozwój własnej drogi, jaką cenę płaci służba dobru wspólnemu?
+      A jeśli wybierasz służbę, jaką cenę płaci Twoja własna możliwość wzrostu i wpływu?
+    hidden_cost_left: >
+      Ambicja może rozszerzyć wpływ, ale oddalić od tych, którzy są blisko i naprawdę potrzebują obecności.
+    hidden_cost_right: >
+      Służba może ocalić wspólnotę, ale pozostawić w Tobie niewypowiedziane poczucie rezygnacji.
+    bias_warning_left: >
+      Czy rozwój nie stał się tu wygodną ucieczką od bliskiej odpowiedzialności?
+    bias_warning_right: >
+      Czy służba nie daje Ci poczucia moralnej wyższości, które ukrywa lęk przed większą próbą?
+    mentor_prompt: >
+      Czy chcesz bardziej być potrzebny, czy bardziej znaczący?
+    bridge_prompt: >
+      Jak spojrzałby na to młody człowiek szukający drogi i uznania?
+      Jak spojrzałby ktoś starszy, kto wie, ile kosztuje sukces bez zakorzenienia?
+    tags_left:
+      - rozwoj
+      - prestiz
+      - wpływ
+      - samorealizacja
+    tags_right:
+      - dobro_wspolne
+      - obecność
+      - odpowiedzialnosc_za_innych
+      - mentorstwo
+
+  - id: d_tozsamosc_01
+    axis_id: tozsamosc_otwartosc
+    axis_left: Tożsamość
+    axis_right: Otwartość
+    title: Miejsce z tradycją wobec nowych przybyszów
+    scenario: >
+      Do miejsca silnie zakorzenionego w lokalnej tradycji przyjeżdżają ludzie z zewnątrz:
+      z innym stylem życia, innym językiem pracy, innymi przyzwyczajeniami.
+      Wnoszą energię, sieci kontaktów i nowe pomysły, ale ich obecność zaczyna zmieniać rytm
+      i charakter wspólnoty. Możesz mocniej chronić tożsamość miejsca albo szerzej otworzyć je na zmianę.
+    choice_prompt: >
+      Gdzie w tej sytuacji bliżej Ci dziś?
+    cost_question: >
+      Jeśli wybierasz ochronę tożsamości, jaką cenę płaci otwartość na spotkanie z innym?
+      A jeśli wybierasz otwartość, jaką cenę płaci ciągłość miejsca i pamięć wspólnoty?
+    hidden_cost_left: >
+      Ochrona tożsamości może ocalić sens miejsca, ale zamknąć je na żywe spotkanie.
+    hidden_cost_right: >
+      Otwartość może ożywić wspólnotę, ale rozmyć jej rdzeń i pamięć.
+    bias_warning_left: >
+      Czy obrona tożsamości nie staje się tutaj lękiem przed utratą kontroli?
+    bias_warning_right: >
+      Czy otwartość nie stała się modnym słowem, które nie liczy kosztów rozpadu?
+    mentor_prompt: >
+      Co chcesz tu naprawdę zachować: formę, ducha, pamięć czy możliwość nowego początku?
+    bridge_prompt: >
+      Jak widzi to ktoś młody, dla którego świat jest naturalnie otwarty?
+      Jak widzi to ktoś starszy, który wie, że bez pamięci wspólnota szybko staje się przypadkowa?
+    tags_left:
+      - dziedzictwo
+      - ciaglosc
+      - zakorzenienie
+      - ochrona_wspolnoty
+    tags_right:
+      - spotkanie
+      - wymiana
+      - ciekawosc
+      - nowy_poczatek
+
+  - id: d_sumienie_01
+    axis_id: sumienie_reguly
+    axis_left: Sumienie
+    axis_right: Reguły
+    title: Człowiek zablokowany przez procedurę
+    scenario: >
+      System bezpieczeństwa blokuje dostęp do środków osobie starszej, która naprawdę ich potrzebuje.
+      Widzisz, że procedura zadziałała zgodnie z regułą, ale skutek jest uderzająco niesprawiedliwy.
+      Możesz próbować ręcznie obejść mechanizm i pomóc człowiekowi albo pozostać wierny zasadom,
+      które chronią system przed nadużyciem.
+    choice_prompt: >
+      Gdzie w tej sytuacji bliżej Ci dziś?
+    cost_question: >
+      Jeśli wybierasz sumienie i wyjątek od reguły, jaką cenę płaci porządek?
+      A jeśli wybierasz regułę, jaką cenę płaci człowiek i Twoje własne sumienie?
+    hidden_cost_left: >
+      Wyjątek może uratować konkretnego człowieka, ale osłabić zaufanie do zasad.
+    hidden_cost_right: >
+      Wierność regule może ocalić system, ale pozostawić człowieka bez pomocy.
+    bias_warning_left: >
+      Czy współczucie nie prowadzi Cię tu do decyzji, której skutków dla całości nie chcesz widzieć?
+    bias_warning_right: >
+      Czy reguła nie zasłoniła Ci człowieka, którego masz przed oczami?
+    mentor_prompt: >
+      Gdzie w tej sytuacji zaczyna się Twoja odpowiedzialność: przy procedurze czy przy twarzy człowieka?
+    bridge_prompt: >
+      Jak widzi to ktoś młody, który ufa systemom?
+      Jak widzi to ktoś starszy, kto pamięta, że procedury nie cierpią, lecz ludzie?
+    tags_left:
+      - sumienie
+      - wyjatek
+      - człowiek
+      - wspolczucie
+    tags_right:
+      - porzadek
+      - procedura
+      - bezpieczeństwo
+      - przewidywalnosc

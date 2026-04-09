@@ -1,0 +1,30 @@
+wolnosc_odpowiedzialnosc:
+  default_comment: >
+    Wolność bez przyjęcia skutków łatwo staje się wygodą.
+    Odpowiedzialność bez wolności łatwo staje się ciężarem bez ducha.
+
+lojalnosc_prawda:
+  default_comment: >
+    Prawda bez relacji może ranić,
+    ale relacja bez prawdy z czasem traci grunt.
+
+skutecznosc_uczciwosc:
+  default_comment: >
+    Nie wszystko, co przyspiesza wynik, służy człowiekowi.
+    Czasem droga niszczy to, co cel miał ocalić.
+
+ambicja_sluzba:
+  default_comment: >
+    Ambicja potrafi rozszerzyć wpływ, ale nie zawsze pogłębia sens.
+    Służba potrafi ocalić sens, ale czasem domaga się rezygnacji z blasku.
+
+tozsamosc_otwartosc:
+  default_comment: >
+    Tożsamość bez otwartości może skamienieć.
+    Otwartość bez zakorzenienia może utracić pamięć o tym, kim się jest.
+
+sumienie_reguly:
+  default_comment: >
+    Reguły chronią porządek, ale nie cierpią.
+    Sumienie widzi człowieka, lecz samo także może się mylić.
+    
