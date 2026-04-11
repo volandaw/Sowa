@@ -2,21 +2,22 @@ import streamlit as st
 
 
 def render_welcome():
-    st.title("Nowe granice odpowiedzialności")
-    st.caption("Zmieniają się czasy, zmienia się świat. Jak wyznaczać granice odpowiedzialności w zmiennej rzeczywistości, nie naruszając własnych wartości?")
+    st.title("Moje granice odpowiedzialności")
     st.caption("aplikacja edukacyjno-refleksyjna")
     st.caption("pierwszy moduł systemu mentorskiego")
 
     st.markdown(
         """
+        Czy zdarza Ci się pomyśleć, że zrobiłeś coś zbyt szybko?  
+        Powiedziałeś coś, czego nie da się już cofnąć?
+
         To nie jest test.  
-        To nie jest ankieta.  
-        To jest krótka przestrzeń rozeznania.
+        To nie są cudze badania.  
+        To chwila, w której możesz spokojniej przyjrzeć się własnym wyborom.
         """
     )
 
     return st.button("wejdź")
-
 
 def render_manifest(manifesto):
     st.title(manifesto["title"])
@@ -27,13 +28,50 @@ def render_manifest(manifesto):
 
     return st.button("czytaj dalej")
 
+def render_set_selector(set_files):
+    st.title("Która z tych sytuacji jest Ci dziś najbliższa?")
+
+    set_map = {
+        "podstawowe.yaml": "Codzienne granice odpowiedzialności",
+        "slad.yaml": "Silny stres, milczenie i odpowiedź",
+    }
+
+    options = [set_map.get(name, name) for name in set_files]
+    reverse_map = {set_map.get(name, name): name for name in set_files}
+
+    selected_label = st.radio(
+        "Wybierz obszar, który najmocniej dotyka dziś Twojej uwagi:",
+        options=options,
+        index=0
+    )
+
+    st.markdown(
+        """
+        Każdy obszar dotyka innego rodzaju napięcia.  
+        Wybierz ten, który jest Ci dziś najbliższy.
+        """
+    )
+
+    if st.button("otwórz ten obszar"):
+        return reverse_map[selected_label]
+
+    return None
 
 def render_dilemma(dilemma):
     st.title(dilemma["title"])
     st.caption(f"Oś: {dilemma['axis_left']} ↔ {dilemma['axis_right']}")
 
+    st.markdown(
+        """
+        Przed Tobą jeden z sześciu dylematów.  
+        Zaznacz, gdzie jest Ci dziś bliżej.  
+        Skala nie ocenia. Pomaga tylko zobaczyć kierunek.
+        """
+    )
+
+    st.markdown("---")
     st.markdown(dilemma["scenario"])
-    st.markdown(f"**{dilemma['choice_prompt']}**")
+    st.markdown(f"**{dilemma['choice_prompt']}**")    
 
     choice_value = st.slider(
         f"{dilemma['axis_left']} ↔ {dilemma['axis_right']}",
@@ -45,7 +83,7 @@ def render_dilemma(dilemma):
 
     cost_reflection = st.text_area(
         dilemma["cost_question"],
-        placeholder="Kilka słów dla siebie. Możesz też zostawić puste.",
+        placeholder="Jeśli chcesz, zostaw krótką notatkę dla siebie. Co w tej sytuacji porusza Cię najmocniej? Możesz też zostawić puste.",
         height=120
     )
 
@@ -68,6 +106,9 @@ def render_mirror(mirror_data):
 
         st.markdown("### Cena")
         st.markdown(item["hidden_cost"])
+
+        if item.get("mirror_line"):
+            st.markdown(item["mirror_line"])      
 
         st.markdown("### Łagodne ostrzeżenie")
         st.markdown(item["bias_warning"])

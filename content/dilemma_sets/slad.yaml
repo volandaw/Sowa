@@ -1,0 +1,107 @@
+axes:
+  - id: lojalnosc_prawda
+    left: Lojalność
+    right: Prawda
+    description: Napięcie między ochroną relacji a odsłonięciem faktów.
+
+  - id: sumienie_reguly
+    left: Sumienie
+    right: Reguły
+    description: Napięcie między żywym rozeznaniem a porządkiem procedur.
+
+dilemmas:
+  - id: d_slad_01
+    axis_id: lojalnosc_prawda
+    axis_left: Lojalność
+    axis_right: Prawda
+    title: Milczenie przy hejcie
+    scenario: >
+      W klasie lub w zamkniętej grupie krąży film i fala komentarzy,
+      które upokarzają jedną osobę. Nie jesteś autorem. Nie dokładasz nic od siebie.
+      Widzisz jednak, że większość milczy, bo nie chce stać się kolejnym celem.
+      Ty także możesz nic nie powiedzieć, zachowując spokój i pozycję w grupie.
+      Możesz też stanąć po stronie osoby poniżanej, ryzykując odrzucenie,
+      śmiech albo utratę własnego bezpieczeństwa.
+    choice_prompt: >
+      Gdzie w tej sytuacji bliżej Ci dziś?
+    cost_question: >
+      Jeśli wybierasz lojalność wobec grupy i własnego bezpieczeństwa, jaką cenę płaci człowiek,
+      który zostaje sam? A jeśli wybierasz prawdę i reakcję, jaką cenę płaci Twoje miejsce
+      wśród ludzi, z którymi jesteś na co dzień?
+    hidden_cost_left: >
+      Milczenie może ochronić Cię dziś, ale dla kogoś innego może stać się dowodem,
+      że nikt nie uznał jego bólu za wart ryzyka.
+    hidden_cost_right: >
+      Reakcja może ocalić czyjąś godność, ale może też wystawić Cię na samotność,
+      której wcześniej nie znałeś.
+    bias_warning_left: >
+      Czy nazywasz neutralnością coś, co w praktyce staje się zgodą na upokorzenie?
+    bias_warning_right: >
+      Czy reagujesz dla człowieka, czy także po to, by zobaczyć siebie po właściwej stronie?
+    mentor_prompt: >
+      W którym momencie milczenie przestaje być ostrożnością, a staje się współudziałem?
+    mirror_line_left: >
+      Być może ocaliłeś porządek i formalną poprawność, ale ktoś krzywdzony
+      został jeszcze chwilę dłużej sam z tym, co go niszczy.
+    mirror_line_right: >
+      Być może zareagowałeś wcześniej niż pozwalał na to komfort procedur,
+      ale wziąłeś na siebie ciężar ryzyka, że pomylisz alarm z pewnością.
+    bridge_prompt: >
+      Jak odpowiedziałby ktoś, kto sam był kiedyś publicznie upokorzony?
+      Jak odpowiedziałby ktoś, kto raz milczał i pamięta to do dziś?
+    tags_left:
+      - milczenie
+      - bezpieczeństwo
+      - grupa
+      - unikanie_ryzyka
+    tags_right:
+      - reakcja
+      - godność
+      - prawda
+      - ryzyko_osamotnienia
+
+  - id: d_slad_02
+    axis_id: sumienie_reguly
+    axis_left: Sumienie
+    axis_right: Reguły
+    title: Procedury jeszcze nie pozwalają
+    scenario: >
+      W szkole lub instytucji wiesz, że jedna osoba doświadcza przemocy,
+      upokorzenia albo systematycznego wykluczania. Widzisz sygnały,
+      słyszysz relacje, czujesz że dzieje się coś realnego.
+      Formalnie jednak „nie ma jeszcze pełnych podstaw”, aby uruchomić
+      procedury albo podjąć mocniejsze działania. Możesz czekać na komplet
+      dowodów i działać zgodnie z zasadami. Możesz też zareagować wcześniej,
+      ryzykując, że ktoś oskarży Cię o przekroczenie roli, nadinterpretację
+      albo złamanie reguł.
+    choice_prompt: >
+      Gdzie w tej sytuacji bliżej Ci dziś?
+    cost_question: >
+      Jeśli wybierasz wierność procedurze, jaką cenę płaci człowiek, który nadal zostaje bez ochrony?
+      A jeśli wybierasz sumienie i wcześniejszą reakcję, jaką cenę płaci porządek,
+      przewidywalność i bezpieczeństwo całej instytucji?
+    hidden_cost_left: >
+      Czekanie na pełną jasność może chronić instytucję, ale dla krzywdzonej osoby
+      każdy kolejny dzień może być potwierdzeniem, że nikt nie chce zaryzykować dla niej własnej pozycji.
+    hidden_cost_right: >
+      Wcześniejsza reakcja może zatrzymać krzywdę, ale może też uruchomić chaos,
+      błędne oskarżenie albo utratę zaufania do zasad.
+    bias_warning_left: >
+      Czy procedura nie daje Ci wygodnego schronienia przed ciężarem decyzji?
+    bias_warning_right: >
+      Czy pewność własnego sumienia nie usypia Twojej ostrożności wobec faktów?
+    mentor_prompt: >
+      Ile cierpienia drugiego człowieka jesteś gotów uznać za „jeszcze niewystarczające” do działania?
+    bridge_prompt: >
+      Jak spojrzałby na to ktoś, kto wierzy w procedury, bo chronią przed niesprawiedliwością?
+      Jak spojrzałby ktoś, kto pamięta, że procedury często przychodzą za późno dla ofiary?
+    tags_left:
+      - procedura
+      - ostrożność
+      - porządek
+      - instytucja
+    tags_right:
+      - sumienie
+      - wcześniejsza_reakcja
+      - ochrona_człowieka
+      - ryzyko_błędu

@@ -24,6 +24,8 @@ def save_answer(dilemma, answer):
             "bias_warning_left": dilemma.get("bias_warning_left", ""),
             "bias_warning_right": dilemma.get("bias_warning_right", ""),
             "mentor_prompt": dilemma.get("mentor_prompt", ""),
+            "mirror_line_left": dilemma.get("mirror_line_left", ""),
+            "mirror_line_right": dilemma.get("mirror_line_right", ""),
         }
     )
 
@@ -51,14 +53,17 @@ def build_mirror_data(answers, sages):
             tendency = f"Bliżej Ci dziś ku biegunowi: {answer['axis_left']}."
             hidden_cost = answer["hidden_cost_left"]
             bias_warning = answer["bias_warning_left"]
+            mirror_line = answer.get("mirror_line_left", "")
         elif score > 0:
             tendency = f"Bliżej Ci dziś ku biegunowi: {answer['axis_right']}."
             hidden_cost = answer["hidden_cost_right"]
             bias_warning = answer["bias_warning_right"]
+            mirror_line = answer.get("mirror_line_right", "")
         else:
             tendency = "Pozostajesz dziś w samym środku napięcia, bez łatwego rozstrzygnięcia."
             hidden_cost = "Być może chronisz obie wartości, ale żadnej nie da się ocalić bez kosztu."
             bias_warning = "Czy zawieszenie decyzji nie jest także formą wyboru?"
+            mirror_line = ""
 
         sage_comment = sages.get(axis_id, {}).get("default_comment", "")
 
@@ -72,6 +77,7 @@ def build_mirror_data(answers, sages):
                 "mentor_prompt": answer["mentor_prompt"],
                 "sage_comment": sage_comment,
                 "cost_reflection": answer["cost_reflection"],
+                "mirror_line": mirror_line,
             }
         )
 

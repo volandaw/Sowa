@@ -1,6 +1,11 @@
 import streamlit as st
 
-from core.loader import load_manifesto, load_dilemmas, load_sages
+from core.loader import (
+    load_manifesto,
+    load_sages,
+    list_dilemma_sets,
+    load_dilemma_set,
+)
 from core.session import init_session_state, reset_session
 from core.engine import (
     get_current_dilemma,
@@ -12,20 +17,21 @@ from core.engine import (
 from ui.screens import (
     render_welcome,
     render_manifest,
+    render_set_selector,
     render_dilemma,
     render_mirror,
     render_silence,
 )
 
 st.set_page_config(
-    page_title="Nowe granice odpowiedzialności",
+    page_title="Moje granice odpowiedzialności",
     page_icon="🦉",
     layout="centered",
 )
 
 manifesto = load_manifesto("content/manifesto.yaml")
-dilemmas = load_dilemmas("content/dilemmas.yaml")
 sages = load_sages("content/sages.yaml")
+set_files = list_dilemma_sets("content/dilemma_sets")
 
 init_session_state()
 
@@ -38,10 +44,20 @@ if screen == "welcome":
 
 elif screen == "manifest":
     if render_manifest(manifesto):
+        st.session_state.screen = "set_selector"
+        st.rerun()
+
+elif screen == "set_selector":
+    selected_set = render_set_selector(set_files)
+    if selected_set is not None:
+        st.session_state.selected_set = selected_set
+        st.session_state.current_dilemma_index = 0
+        st.session_state.answers = []
         st.session_state.screen = "dilemma"
         st.rerun()
 
 elif screen == "dilemma":
+    dilemmas = load_dilemma_set("content/dilemma_sets", st.session_state.selected_set)
     dilemma = get_current_dilemma(dilemmas)
 
     if dilemma is None:

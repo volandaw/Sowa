@@ -4,6 +4,7 @@ import streamlit as st
 def init_session_state():
     defaults = {
         "screen": "welcome",
+        "selected_set": None,
         "current_dilemma_index": 0,
         "answers": [],
         "mirror_data": None,
@@ -15,7 +16,7 @@ def init_session_state():
 
 
 def reset_session():
-    for key in ["screen", "current_dilemma_index", "answers", "mirror_data"]:
+    for key in ["screen", "selected_set", "current_dilemma_index", "answers", "mirror_data"]:
         if key in st.session_state:
             del st.session_state[key]
 
