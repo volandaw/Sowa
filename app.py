@@ -28,7 +28,61 @@ st.set_page_config(
     page_icon="🦉",
     layout="centered",
 )
+st.set_page_config(
+    page_title="Moje granice odpowiedzialności",
+    page_icon="🦉",
+    layout="centered",
+)
 
+st.markdown(
+    """
+    <style>
+    html, body, [class*="css"] {
+        font-size: 18px;
+    }
+
+    p, li, div {
+        font-size: 1.05rem;
+        line-height: 1.7;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+        font-weight: 700;
+        line-height: 1.3;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+        font-weight: 700;
+        line-height: 1.4;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+        font-weight: 700;
+        line-height: 1.5;
+    }
+
+    .stCaption {
+        font-size: 0.98rem !important;
+        color: #444 !important;
+    }
+
+    label, .stMarkdown, .stTextArea, .stRadio, .stSlider {
+        font-size: 1.02rem !important;
+    }
+
+    button[kind="primary"], button[kind="secondary"] {
+        font-size: 1rem !important;
+        font-weight: 600 !important;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+manifesto = load_manifesto("content/manifesto.yaml")
 manifesto = load_manifesto("content/manifesto.yaml")
 sages = load_sages("content/sages.yaml")
 set_files = list_dilemma_sets("content/dilemma_sets")

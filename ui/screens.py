@@ -1,6 +1,5 @@
 import streamlit as st
 
-
 def render_welcome():
     st.title("Moje granice odpowiedzialności")
     st.caption("aplikacja edukacyjno-refleksyjna")
@@ -9,7 +8,8 @@ def render_welcome():
     st.markdown(
         """
         Czy zdarza Ci się pomyśleć, że zrobiłeś coś zbyt szybko?  
-        Powiedziałeś coś, czego nie da się już cofnąć?
+        Powiedziałeś coś, czego nie da się już cofnąć?  
+        Czy nie zareagowałeś, kiedy działo się coś złego?
 
         To nie jest test.  
         To nie są cudze badania.  
@@ -32,10 +32,10 @@ def render_set_selector(set_files):
     st.title("Która z tych sytuacji jest Ci dziś najbliższa?")
 
     set_map = {
-        "podstawowe.yaml": "Codzienne granice odpowiedzialności",
-        "slad.yaml": "Silny stres, milczenie i odpowiedź",
-    }
-
+    "podstawowe.yaml": "Codzienne granice odpowiedzialności",
+    "slad.yaml": "Silny stres, milczenie i odpowiedź",
+    "szkola.yaml": "Hejt w szkole",
+}
     options = [set_map.get(name, name) for name in set_files]
     reverse_map = {set_map.get(name, name): name for name in set_files}
 
@@ -123,6 +123,12 @@ def render_mirror(mirror_data):
         if item.get("sage_comment"):
             st.markdown("### Głos obok")
             st.info(item["sage_comment"])
+        
+        
+        if item.get("help_hint"):
+            st.markdown("### Dalej")
+            st.markdown(item["help_hint"])
+
 
         st.markdown("---")
 

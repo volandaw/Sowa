@@ -1,0 +1,251 @@
+axes:
+  - id: milczenie_reakcja
+    left: Siedzieć cicho
+    right: Zareagować
+    description: Napięcie między milczeniem a zrobieniem czegoś.
+
+  - id: sekret_pomoc
+    left: Zatrzymać to dla siebie
+    right: Powiedzieć dorosłemu
+    description: Napięcie między sekretem a szukaniem pomocy.
+
+  - id: grupa_czlowiek
+    left: Trzymać się grupy
+    right: Stanąć po stronie słabszego
+    description: Napięcie między wygodą grupy a obroną człowieka.
+
+  - id: spokoj_nazwanie
+    left: Udawać, że nic się nie dzieje
+    right: Nazwać problem
+    description: Napięcie między pozornym spokojem a przerwaniem krzywdy.
+
+dilemmas:
+  - id: uczen_01
+    axis_id: milczenie_reakcja
+    axis_left: Siedzieć cicho
+    axis_right: Zareagować
+    title: Wszyscy widzieli, nikt nie zatrzymał
+    scenario: >
+      Na klasowej grupie pojawia się przerobione zdjęcie jednej osoby.
+      Potem dochodzą komentarze i memy. Wszyscy piszą, że to tylko żart,
+      ale ta osoba następnego dnia siedzi sama i nie patrzy nikomu w oczy.
+      Ty nic nie dodałeś od siebie. Możesz dalej siedzieć cicho,
+      żeby nie wejść pod ogień grupy. Możesz też napisać albo powiedzieć,
+      że to nie jest śmieszne.
+    choice_prompt: >
+      Co jest Ci dziś bliższe?
+    cost_question: >
+      Jeśli siedzisz cicho, jaką cenę płaci osoba, którą właśnie wypchnięto poza grupę?
+      A jeśli reagujesz, jaką cenę możesz zapłacić Ty?
+    hidden_cost_left: >
+      Milczenie może dać Ci spokój na dziś,
+      ale ktoś inny może zapamiętać, że został z tym sam.
+    hidden_cost_right: >
+      Reakcja może obronić drugiego człowieka,
+      ale może też sprawić, że sam znajdziesz się pod presją grupy.
+    bias_warning_left: >
+      Czy siedzenie cicho nie zostawia tej osoby samej dokładnie wtedy, gdy najbardziej tego potrzebuje?
+    bias_warning_right: >
+      Czy jesteś gotów nie tylko zareagować, ale też wytrzymać to, co będzie potem?
+    mentor_prompt: >
+      W którym momencie siedzenie cicho przestaje być ostrożnością?
+    mirror_line_left: >
+      Być może ochroniłeś siebie,
+      ale ktoś obok mógł odczytać Twoje milczenie jako brak pomocy.
+    mirror_line_center: >
+      Jeśli nie wiesz, co zrobić, pomyśl:
+      czego sam najbardziej oczekiwałbyś od innych, gdyby to spotkało właśnie Ciebie?
+    mirror_line_right: >
+      Być może stanąłeś po stronie człowieka,
+      ale zrobiłeś to za cenę własnego spokoju.
+    help_hint: >
+      Jeśli sam nie wiesz, co zrobić, nie zostawaj z tym sam.
+      W podobnych sytuacjach pomagało zachowanie dowodów,
+      rozmowa z jedną zaufaną dorosłą osobą
+      i powiedzenie wprost, że to nie jest żart.
+    bridge_prompt: >
+      Jak odpowiedziałby ktoś, kto sam był kiedyś wyśmiany?
+      Jak odpowiedziałby ktoś, kto raz milczał i pamięta to do dziś?
+    tags_left:
+      - milczenie
+      - grupa
+      - bezpieczeństwo
+      - unikanie
+    tags_right:
+      - reakcja
+      - obrona
+      - godność
+      - ryzyko
+
+  - id: uczen_02
+    axis_id: sekret_pomoc
+    axis_left: Zatrzymać to dla siebie
+    axis_right: Powiedzieć dorosłemu
+    title: Obiecałeś, że nikomu nie powiesz
+    scenario: >
+      Koleżanka mówi Ci, że nie daje już rady.
+      Ktoś wrzuca o niej rzeczy do sieci, ktoś wycina ją z rozmów,
+      a inni udają, że nic się nie dzieje.
+      Prosi Cię, żebyś nikomu nie mówił, bo boi się, że będzie jeszcze gorzej.
+      Wiesz jednak, że sam tego nie zatrzymasz.
+    choice_prompt: >
+      Co jest Ci dziś bliższe?
+    cost_question: >
+      Jeśli zatrzymasz to dla siebie, jaką cenę może płacić osoba,
+      która już ledwo to znosi? A jeśli powiesz dorosłemu,
+      jaką cenę może zapłacić Wasze zaufanie?
+    hidden_cost_left: >
+      Dochowanie tajemnicy może chronić relację,
+      ale może też zostawić tę osobę samą z ciężarem, którego już nie niesie.
+    hidden_cost_right: >
+      Włączenie dorosłego może uruchomić pomoc,
+      ale może też zostać odebrane jako złamanie obietnicy.
+    bias_warning_left: >
+      Czy nie nazywasz lojalnością czegoś, co zostawia drugą osobę bez realnej pomocy?
+    bias_warning_right: >
+      Czy umiesz poprosić o pomoc tak, żeby nie odebrać tej osobie resztek wpływu?
+    mentor_prompt: >
+      Kiedy sekret chroni człowieka, a kiedy zaczyna go zostawiać samego?
+    mirror_line_left: >
+      Być może dochowałeś sekretu,
+      ale ktoś bliski mógł zapłacić za to dalszym osamotnieniem.
+    mirror_line_center: >
+      Jeśli nie wiesz, co zrobić, pomyśl:
+      czy sam chciałbyś zostać z tym całkiem bez pomocy dorosłych?
+    mirror_line_right: >
+      Być może naruszyłeś czyjąś prośbę,
+      ale zrobiłeś to dlatego, że uznałeś bezpieczeństwo za ważniejsze niż chwilowy spokój.
+    help_hint: >
+      Nie każdą sytuację da się unieść samemu.
+      Czasem pierwszy dobry krok to powiedzieć o tym jednej zaufanej dorosłej osobie:
+      wychowawcy, pedagogowi, psychologowi szkolnemu albo rodzicowi.
+    bridge_prompt: >
+      Jak odpowiedziałby ktoś, kto bał się, że dorośli wszystko pogorszą?
+      Jak odpowiedziałby ktoś, komu pomoc przyszła dopiero wtedy, gdy ktoś poszedł po wsparcie?
+    tags_left:
+      - sekret
+      - relacja
+      - lojalność
+      - bezradność
+    tags_right:
+      - pomoc
+      - dorosły
+      - odpowiedzialność
+      - ryzyko
+
+  - id: uczen_03
+    axis_id: grupa_czlowiek
+    axis_left: Trzymać się grupy
+    axis_right: Stanąć po stronie słabszego
+    title: Żart, który już nie jest śmieszny
+    scenario: >
+      W klasie jest jedna osoba, z której „wszyscy cisną”:
+      z wyglądu, głosu, ubrań, domu albo z tego, że jest „inna”.
+      Większość mówi, że to tylko klimat klasy.
+      Ty też czasem się śmiejesz albo nic nie mówisz,
+      bo dzięki temu jesteś po bezpiecznej stronie.
+    choice_prompt: >
+      Co jest Ci dziś bliższe?
+    cost_question: >
+      Jeśli trzymasz się grupy, jaką cenę płaci osoba,
+      która stała się materiałem do wspólnego śmiechu?
+      A jeśli stajesz po stronie słabszego,
+      jaką cenę może zapłacić Twoje miejsce w grupie?
+    hidden_cost_left: >
+      Bycie z większością może dawać Ci spokój,
+      ale czasem dzieje się kosztem jednego człowieka.
+    hidden_cost_right: >
+      Obrona słabszego może być właściwa,
+      ale może też kosztować Cię własne miejsce w grupie.
+    bias_warning_left: >
+      Czy nie nazywasz atmosferą czegoś, co dla kogoś innego jest codziennym upokorzeniem?
+    bias_warning_right: >
+      Czy masz siłę wytrzymać, że po tej decyzji sam możesz zostać odsunięty?
+    mentor_prompt: >
+      Czy grupa, która potrzebuje czyjegoś poniżenia, naprawdę jest wspólnotą?
+    mirror_line_left: >
+      Być może ocaliłeś swoje miejsce pośród innych,
+      ale zrobiłeś to kosztem czyjejś godności.
+    mirror_line_center: >
+      Jeśli się wahasz, to znaczy, że widzisz więcej niż sam śmiech.
+      Pomyśl: gdyby to o Tobie mówiono tak codziennie, czy nadal nazwałbyś to żartem?
+    mirror_line_right: >
+      Być może wybrałeś człowieka zamiast łatwej przynależności
+      i właśnie dlatego ten wybór tyle kosztuje.
+    help_hint: >
+      Czasem pierwszy dobry ruch nie polega na wielkim bohaterstwie,
+      tylko na tym, że nie dokładasz ani słowa
+      i nie zostawiasz słabszego samego.
+    bridge_prompt: >
+      Jak odpowiedziałby ktoś, kto sam długo próbował zasłużyć na akceptację grupy?
+      Jak odpowiedziałby ktoś, kto pamięta, że sam kiedyś kogoś „wycinał” żartem?
+    tags_left:
+      - grupa
+      - wygoda
+      - żart
+      - przynależność
+    tags_right:
+      - obrona
+      - godność
+      - granica
+      - samotność
+
+  - id: uczen_04
+    axis_id: spokoj_nazwanie
+    axis_left: Udawać, że nic się nie dzieje
+    axis_right: Nazwać problem
+    title: Lepiej nie ruszać, bo będzie jeszcze gorzej
+    scenario: >
+      Kilka osób mówi Ci, że lepiej nic nie zgłaszać i niczego nie ruszać.
+      „Jak dorośli wejdą, to dopiero się zacznie”, „będzie afera”, „wszyscy oberwą”.
+      Możesz więc chronić pozorny spokój i czekać, aż sprawa sama przycichnie.
+      Możesz też zebrać dowody, powiedzieć komuś dorosłemu
+      albo wesprzeć atakowaną osobę.
+    choice_prompt: >
+      Co jest Ci dziś bliższe?
+    cost_question: >
+      Jeśli udajesz, że nic się nie dzieje,
+      jaką cenę płaci prawda o tej sytuacji?
+      A jeśli nazwiesz problem,
+      jaką cenę może zapłacić wygodny spokój grupy?
+    hidden_cost_left: >
+      Spokój może być tylko ciszą wokół krzywdy,
+      która wcale nie przestała działać.
+    hidden_cost_right: >
+      Nazwanie problemu może wywołać zamieszanie,
+      ale czasem właśnie to zatrzymuje coś złego.
+    bias_warning_left: >
+      Czy spokój nie jest tutaj tylko łagodniejszym słowem na zaniechanie?
+    bias_warning_right: >
+      Czy jesteś gotów nie tylko coś nazwać,
+      ale też unieść to, że już nie da się udawać?
+    mentor_prompt: >
+      Co naprawdę chronisz, kiedy mówisz: lepiej tego nie ruszać?
+    mirror_line_left: >
+      Być może ocaliłeś ciszę wokół siebie,
+      ale nie ocaliłeś człowieka, którego ta cisza dalej niszczyła.
+    mirror_line_center: >
+      Jeśli się zatrzymałeś, to już widzisz,
+      że spokój i obojętność nie zawsze są tym samym.
+      Pomyśl: czy sam chciałbyś, żeby inni niczego nie ruszali,
+      gdyby chodziło o Ciebie?
+    mirror_line_right: >
+      Być może naruszyłeś pozór normalności,
+      ale zrobiłeś to dlatego, że uznałeś go za zbyt drogi moralnie.
+    help_hint: >
+      W wielu podobnych sytuacjach pomagało nie zostawiać wszystkiego tylko między uczniami:
+      zachować dowody, porozmawiać z dorosłym,
+      nie odwracać wzroku i nie udawać, że to samo minie.
+    bridge_prompt: >
+      Jak odpowiedziałby ktoś, kto długo czekał, aż ktoś nazwie to, co się dzieje?
+      Jak odpowiedziałby ktoś, kto boi się, że po zgłoszeniu sam zostanie odrzucony?
+    tags_left:
+      - spokój
+      - pozór
+      - zaniechanie
+      - zwłoka
+    tags_right:
+      - nazwanie
+      - reakcja
+      - dowody
+      - wsparcie
