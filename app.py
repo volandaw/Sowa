@@ -28,11 +28,6 @@ st.set_page_config(
     page_icon="🦉",
     layout="centered",
 )
-st.set_page_config(
-    page_title="Moje granice odpowiedzialności",
-    page_icon="🦉",
-    layout="centered",
-)
 
 st.markdown(
     """
@@ -82,7 +77,6 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-manifesto = load_manifesto("content/manifesto.yaml")
 manifesto = load_manifesto("content/manifesto.yaml")
 sages = load_sages("content/sages.yaml")
 set_files = list_dilemma_sets("content/dilemma_sets")
