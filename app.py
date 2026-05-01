@@ -101,6 +101,8 @@ elif screen == "set_selector":
         st.session_state.selected_set = selected_set
         st.session_state.current_dilemma_index = 0
         st.session_state.answers = []
+        st.session_state.mirror_data = None
+        st.session_state.last_dilemma_completed = False
         st.session_state.screen = "dilemma"
         st.rerun()
 
@@ -109,10 +111,7 @@ elif screen == "dilemma":
     dilemma = get_current_dilemma(dilemmas)
 
     if dilemma is None:
-        st.session_state.mirror_data = build_mirror_data(
-            st.session_state.answers, sages
-        )
-        st.session_state.screen = "mirror"
+        st.session_state.screen = "silence"
         st.rerun()
 
     result = render_dilemma(dilemma)
@@ -120,19 +119,20 @@ elif screen == "dilemma":
     if result is not None:
         save_answer(dilemma, result)
 
-        if is_last_dilemma(dilemmas):
-            st.session_state.mirror_data = build_mirror_data(
-                st.session_state.answers, sages
-            )
-            st.session_state.screen = "mirror"
-        else:
-            go_to_next_dilemma()
+        last_answer = [st.session_state.answers[-1]]
+        st.session_state.mirror_data = build_mirror_data(last_answer, sages)
 
+        st.session_state.last_dilemma_completed = is_last_dilemma(dilemmas)
+        st.session_state.screen = "mirror"
         st.rerun()
 
 elif screen == "mirror":
     if render_mirror(st.session_state.mirror_data):
-        st.session_state.screen = "silence"
+        if st.session_state.last_dilemma_completed:
+            st.session_state.screen = "silence"
+        else:
+            go_to_next_dilemma()
+            st.session_state.screen = "dilemma"
         st.rerun()
 
 elif screen == "silence":

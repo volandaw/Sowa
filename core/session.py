@@ -8,6 +8,7 @@ def init_session_state():
         "current_dilemma_index": 0,
         "answers": [],
         "mirror_data": None,
+        "last_dilemma_completed": False,
     }
 
     for key, value in defaults.items():
@@ -16,7 +17,14 @@ def init_session_state():
 
 
 def reset_session():
-    for key in ["screen", "selected_set", "current_dilemma_index", "answers", "mirror_data"]:
+    for key in [
+        "screen",
+        "selected_set",
+        "current_dilemma_index",
+        "answers",
+        "mirror_data",
+        "last_dilemma_completed",
+    ]:
         if key in st.session_state:
             del st.session_state[key]
 
