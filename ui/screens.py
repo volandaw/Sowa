@@ -3,21 +3,24 @@ import streamlit as st
 def render_welcome():
     st.title("Moje granice odpowiedzialności")
     st.caption("aplikacja edukacyjno-refleksyjna")
-    st.caption("pierwszy moduł systemu mentorskiego")
 
     st.markdown(
         """
-        Czy zdarza Ci się pomyśleć, że zrobiłeś coś zbyt szybko?  
-        Powiedziałeś coś, czego nie da się już cofnąć?  
-        Czy nie zareagowałeś, kiedy działo się coś złego?
-
-        To nie jest test.  
-        To nie są cudze badania.  
-        To chwila, w której możesz spokojniej przyjrzeć się własnym wyborom.
+        W świecie, który przyspiesza, człowiek coraz częściej działa odruchowo — pod wpływem presji, emocji, zmęczenia albo lęku.
         """
     )
 
-    return st.button("wejdź")
+    st.markdown("## ")
+
+    st.markdown(
+        """
+        Ta aplikacja powstała po to, by odzyskać choćby chwilę namysłu między bodźcem a reakcją.  
+        Nie po to, by oceniać. Po to, by nie być obojętnym.
+        """
+    )
+
+    return st.button("Rozpocznij")
+
 
 def render_manifest(manifesto):
     st.title(manifesto["title"])
@@ -28,14 +31,15 @@ def render_manifest(manifesto):
 
     return st.button("czytaj dalej")
 
+
 def render_set_selector(set_files):
     st.title("Która z tych sytuacji jest Ci dziś najbliższa?")
 
     set_map = {
-    "podstawowe.yaml": "Codzienne granice odpowiedzialności",
-    "slad.yaml": "Silny stres, milczenie i odpowiedź",
-    "szkola.yaml": "Hejt w szkole",
-}
+        "podstawowe.yaml": "Codzienne granice odpowiedzialności",
+        "slad.yaml": "Silny stres, milczenie i odpowiedź",
+        "szkola.yaml": "Hejt w szkole",
+    }
     options = [set_map.get(name, name) for name in set_files]
     reverse_map = {set_map.get(name, name): name for name in set_files}
 
@@ -57,6 +61,7 @@ def render_set_selector(set_files):
 
     return None
 
+
 def render_dilemma(dilemma):
     st.title(dilemma["title"])
     st.caption(f"Oś: {dilemma['axis_left']} ↔ {dilemma['axis_right']}")
@@ -71,7 +76,7 @@ def render_dilemma(dilemma):
 
     st.markdown("---")
     st.markdown(dilemma["scenario"])
-    st.markdown(f"**{dilemma['choice_prompt']}**")    
+    st.markdown(f"**{dilemma['choice_prompt']}**")
 
     choice_value = st.slider(
         f"{dilemma['axis_left']} ↔ {dilemma['axis_right']}",
@@ -95,6 +100,7 @@ def render_dilemma(dilemma):
 
     return None
 
+
 def render_mirror(mirror_data):
     st.title("Lustro")
 
@@ -108,7 +114,7 @@ def render_mirror(mirror_data):
         st.markdown(item["hidden_cost"])
 
         if item.get("mirror_line"):
-            st.markdown(item["mirror_line"])      
+            st.markdown(item["mirror_line"])
 
         st.markdown("### Łagodne ostrzeżenie")
         st.markdown(item["bias_warning"])
@@ -123,12 +129,10 @@ def render_mirror(mirror_data):
         if item.get("sage_comment"):
             st.markdown("### Głos obok")
             st.info(item["sage_comment"])
-        
-        
+
         if item.get("help_hint"):
             st.markdown("### Dalej")
             st.markdown(item["help_hint"])
-
 
         st.markdown("---")
 
