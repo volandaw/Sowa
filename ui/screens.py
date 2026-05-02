@@ -1,22 +1,29 @@
+import html
 import streamlit as st
+
 
 def render_welcome():
     st.title("Moje granice odpowiedzialności")
     st.caption("aplikacja edukacyjno-refleksyjna")
+    st.markdown('<div class="welcome-accent-line"></div>', unsafe_allow_html=True)
 
     st.markdown(
         """
-        W świecie, który przyspiesza, człowiek coraz częściej działa odruchowo — pod wpływem presji, emocji, zmęczenia albo lęku.
-        """
+        <div class="welcome-intro">
+            W świecie, który przyspiesza, człowiek coraz częściej działa odruchowo — pod wpływem presji, emocji, zmęczenia albo lęku.
+        </div>
+        """,
+        unsafe_allow_html=True
     )
 
-    st.markdown("## ")
-
     st.markdown(
         """
-        Ta aplikacja powstała po to, by odzyskać choćby chwilę namysłu między bodźcem a reakcją.  
-        Nie po to, by oceniać. Po to, by nie być obojętnym.
-        """
+        <div class="welcome-motto">
+            Ta aplikacja powstała po to, by odzyskać choćby chwilę namysłu między bodźcem a reakcją.<br>
+            Nie po to, by oceniać. Po to, by nie być obojętnym.
+        </div>
+        """,
+        unsafe_allow_html=True
     )
 
     return st.button("Rozpocznij")
@@ -29,7 +36,7 @@ def render_manifest(manifesto):
     for paragraph in manifesto["paragraphs"]:
         st.markdown(paragraph)
 
-    return st.button("czytaj dalej")
+    return st.button("Przejdź dalej")
 
 
 def render_set_selector(set_files):
@@ -56,14 +63,32 @@ def render_set_selector(set_files):
         """
     )
 
-    if st.button("otwórz ten obszar"):
-        return reverse_map[selected_label]
+    if st.button("Wybieram ten obszar"):
+        return "select", reverse_map[selected_label]
 
-    return None
+    if st.button("Zakończ teraz"):
+        return "end", None
+
+    return None, None
 
 
 def render_dilemma(dilemma):
-    st.title(dilemma["title"])
+    accent_index = st.session_state.get("current_dilemma_index", 0) % 6
+    safe_title = html.escape(dilemma["title"])
+    safe_axis_left = html.escape(dilemma["axis_left"])
+    safe_axis_right = html.escape(dilemma["axis_right"])
+    safe_scenario = html.escape(dilemma["scenario"])
+
+    st.markdown(
+        f"""
+        <div class="dilemma-accent-{accent_index}">
+            <h1>{safe_title}</h1>
+            <div class="dilemma-title-line dilemma-accent-{accent_index}"></div>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+
     st.caption(f"Oś: {dilemma['axis_left']} ↔ {dilemma['axis_right']}")
 
     st.markdown(
@@ -74,12 +99,19 @@ def render_dilemma(dilemma):
         """
     )
 
-    st.markdown("---")
-    st.markdown(dilemma["scenario"])
+    st.markdown(
+        f"""
+        <div class="dilemma-box dilemma-accent-{accent_index}">
+            {safe_scenario}
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+
     st.markdown(f"**{dilemma['choice_prompt']}**")
 
     choice_value = st.slider(
-        f"{dilemma['axis_left']} ↔ {dilemma['axis_right']}",
+        f"{safe_axis_left} ↔ {safe_axis_right}",
         min_value=-2,
         max_value=2,
         value=0,
@@ -92,13 +124,16 @@ def render_dilemma(dilemma):
         height=120
     )
 
-    if st.button("zobacz lustro"):
-        return {
+    if st.button("Zobacz odbicie"):
+        return "answer", {
             "choice_value": choice_value,
             "cost_reflection": cost_reflection,
         }
 
-    return None
+    if st.button("Zakończ teraz"):
+        return "end", None
+
+    return None, None
 
 
 def render_mirror(mirror_data):
@@ -127,7 +162,7 @@ def render_mirror(mirror_data):
             st.markdown(item["cost_reflection"])
 
         if item.get("sage_comment"):
-            st.markdown("### Głos obok")
+            st.markdown("### Co powiedziałaby Sowa?")
             st.info(item["sage_comment"])
 
         if item.get("help_hint"):
@@ -136,7 +171,13 @@ def render_mirror(mirror_data):
 
         st.markdown("---")
 
-    return st.button("zamknij")
+    if st.button("Idź dalej"):
+        return "next"
+
+    if st.button("Zakończ teraz"):
+        return "end"
+
+    return None
 
 
 def render_silence():
@@ -149,4 +190,4 @@ def render_silence():
         """
     )
 
-    return st.button("wróć do początku")
+    return st.button("Wróć na początek")

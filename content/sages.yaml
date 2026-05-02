@@ -27,4 +27,23 @@ sumienie_reguly:
   default_comment: >
     Reguły chronią porządek, ale nie cierpią.
     Sumienie widzi człowieka, lecz samo także może się mylić.
-    
+
+grupa_czlowiek:
+  default_comment: >
+    Sowa zapytałaby, czy wygoda grupy naprawdę jest spokojem,
+    jeśli ktoś słabszy zostaje z tym sam.
+
+milczenie_reakcja:
+  default_comment: >
+    Sowa zapytałaby, czy cisza naprawdę chroni spokój,
+    czy tylko pozwala krzywdzie trwać dłużej.
+
+sekret_pomoc:
+  default_comment: >
+    Sowa zapytałaby, czy zatrzymanie sekretu dla siebie pomaga,
+    jeśli ktoś zostaje sam z czymś zbyt trudnym.
+
+spokoj_nazwanie:
+  default_comment: >
+    Sowa zapytałaby, czy udawanie spokoju naprawdę rozwiązuje problem,
+    czy tylko odsuwa moment, w którym trzeba go nazwać.
