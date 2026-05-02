@@ -9,6 +9,31 @@ axes:
     right: Wziąć odpowiedzialność
     description: Napięcie między odsuwaniem reakcji a wejściem w trudną sytuację.
 
+  - id: prawda_nadzieja
+    left: Powiedzieć całą prawdę
+    right: Chronić nadzieję
+    description: Napięcie między prawdą wypowiedzianą wprost a troską o ostatnią nadzieję.
+
+  - id: misja_czlowieczenstwo
+    left: Ratować misję za wszelką cenę
+    right: Nie przekroczyć granicy człowieczeństwa
+    description: Napięcie między bezpieczeństwem własnych ludzi a ochroną niewinnego człowieka.
+
+  - id: lojalnosc_sprawiedliwosc
+    left: Chronić bliską osobę
+    right: Ujawnić prawdę
+    description: Napięcie między lojalnością wobec bliskiego a odpowiedzialnością wobec skrzywdzonych.
+
+  - id: sprawiedliwosc_wiez
+    left: Kierować się zasadą
+    right: Ratować tego, kogo znasz
+    description: Napięcie między bezosobową sprawiedliwością a więzią z konkretnym człowiekiem.
+
+  - id: przyjazn_zycie
+    left: Nie psuć relacji
+    right: Zatrzymać za wszelką cenę
+    description: Napięcie między lojalnością wobec przyjaciela a odpowiedzialnością za życie.
+
 dilemmas:
   - id: slad_01
     axis_id: lojalnosc_prawda
@@ -129,3 +154,289 @@ dilemmas:
       - pierwszy_krok
       - wsparcie
       - ryzyko
+
+  - id: slad_03
+    axis_id: prawda_nadzieja
+    axis_left: Powiedzieć całą prawdę
+    axis_right: Chronić nadzieję
+    title: Ostatnia rozmowa
+    scenario: >
+      Droga Ci osoba jest śmiertelnie chora. Lekarze mówią, że zostały jej
+      prawdopodobnie tylko godziny. W rozmowie ta osoba pyta Cię:
+      „Czy ja z tego wyjdę?”. Wiesz, co powiedział lekarz.
+      Możesz powiedzieć wprost całą prawdę. Możesz też odpowiedzieć wymijająco,
+      żeby nie odebrać jej ostatniej nadziei.
+    choice_prompt: >
+      Co jest Ci dziś bliższe?
+    cost_question: >
+      Jeśli powiesz całą prawdę, jaką cenę może zapłacić człowiek,
+      który być może potrzebuje już nie informacji, ale obecności?
+      A jeśli ochronisz nadzieję, jaką cenę może zapłacić jego prawo
+      do świadomego pożegnania?
+    hidden_cost_left: >
+      Prawda wypowiedziana bez czułości może stać się ciężarem,
+      którego druga osoba nie ma już siły unieść.
+    hidden_cost_right: >
+      Ochrona nadziei może być gestem miłości,
+      ale może też zostawić kogoś samotnego wobec najważniejszej prawdy.
+    bias_warning_left: >
+      Czy nie mylisz uczciwości z brutalnym przekazaniem informacji?
+    bias_warning_right: >
+      Czy nie mylisz troski z odebraniem komuś prawa do ostatniej rozmowy?
+    mentor_prompt: >
+      Czy prawda musi zostać powiedziana cała naraz, żeby była prawdą?
+    mirror_line_left: >
+      Być może wybrałeś prawdę, ale teraz warto zapytać,
+      czy podałeś ją jak kamień, czy jak dłoń.
+    mirror_line_center: >
+      Skoro się wahasz, to znaczy, że widzisz, jak blisko siebie stoją
+      prawda i miłość. Może najważniejsze nie jest tylko to, co powiedzieć,
+      ale jak przy tym zostać.
+    mirror_line_right: >
+      Być może ochroniłeś nadzieję, ale pamiętaj,
+      że człowiek ma także prawo nie być sam wobec prawdy o sobie.
+    help_hint: >
+      Czasem odpowiedź nie musi brzmieć jak wyrok.
+      Można powiedzieć mniej, ale być bliżej:
+      „Lekarze mówią, że jest bardzo poważnie. Jestem przy Tobie”.
+    bridge_prompt: >
+      Jak odpowiedziałby ktoś, kto nie zdążył się pożegnać?
+      Jak odpowiedziałby ktoś, komu odebrano nadzieję zbyt gwałtownie?
+    tags_left:
+      - prawda
+      - umieranie
+      - uczciwość
+      - pożegnanie
+    tags_right:
+      - nadzieja
+      - troska
+      - miłość
+      - ochrona
+
+  - id: slad_04
+    axis_id: misja_czlowieczenstwo
+    axis_left: Ratować misję za wszelką cenę
+    axis_right: Nie przekroczyć granicy człowieczeństwa
+    title: Chłopiec w górach
+    scenario: >
+      Dowódca oddziału prowadzi ludzi na niebezpieczną akcję w górach.
+      Po drodze natrafiają na chłopca, który może zdradzić ich obecność.
+      Oddział nie może zabrać go ze sobą. Jeśli go wypuszczą,
+      chłopiec może uprzedzić przeciwnika. Jeśli potraktują go brutalnie,
+      przekroczą granicę, której nie da się łatwo cofnąć.
+    choice_prompt: >
+      Co jest Ci dziś bliższe?
+    cost_question: >
+      Jeśli najważniejsza stanie się misja, jaką cenę może zapłacić niewinny człowiek?
+      A jeśli najważniejsza stanie się granica człowieczeństwa,
+      jaką cenę mogą zapłacić ludzie, za których odpowiadasz?
+    hidden_cost_left: >
+      Ratowanie misji za wszelką cenę może ocalić oddział,
+      ale może też zniszczyć w dowódcy coś, czego nie odbuduje żadne zwycięstwo.
+    hidden_cost_right: >
+      Nieprzekroczenie granicy może ocalić sumienie,
+      ale może też narazić ludzi na śmierć albo klęskę całej akcji.
+    bias_warning_left: >
+      Czy słowo „konieczność” nie staje się zasłoną dla decyzji,
+      której boisz się nazwać?
+    bias_warning_right: >
+      Czy wierność zasadzie nie zwalnia Cię z obowiązku szukania rozwiązania,
+      które ochroni także Twoich ludzi?
+    mentor_prompt: >
+      Czy naprawdę zostały tylko dwie drogi, czy trzeba jeszcze szukać trzeciej?
+    mirror_line_left: >
+      Być może wybrałeś skuteczność, ale sprawdź,
+      czy nie zapłaciłeś za nią człowiekiem, którego nie wolno było potraktować jak przeszkody.
+    mirror_line_center: >
+      Skoro zatrzymałeś się pośrodku, być może widzisz,
+      że najtrudniejsza odpowiedzialność nie polega na prostym wyborze,
+      ale na szukaniu mniej strasznego wyjścia pod presją czasu.
+    mirror_line_right: >
+      Być może ochroniłeś granicę człowieczeństwa,
+      ale ta decyzja nie zwalnia z ciężaru odpowiedzialności za tych,
+      których prowadziłeś.
+    help_hint: >
+      W sytuacji granicznej trzecia droga może być niedoskonała,
+      ale nadal ważna: unieruchomić chłopca tak, by nie mógł ostrzec przeciwnika,
+      a po zakończeniu misji przekazać, gdzie jest.
+    bridge_prompt: >
+      Jak odpowiedziałby dowódca, który stracił ludzi?
+      Jak odpowiedziałby człowiek, który przeżył, ale wie, jaką cenę zapłaciło jego sumienie?
+    tags_left:
+      - misja
+      - bezpieczeństwo
+      - dowodzenie
+      - konieczność
+    tags_right:
+      - człowieczeństwo
+      - granica
+      - niewinność
+      - sumienie
+
+  - id: slad_05
+    axis_id: lojalnosc_sprawiedliwosc
+    axis_left: Chronić bliską osobę
+    axis_right: Ujawnić prawdę
+    title: Przestępstwo bliskiej osoby
+    scenario: >
+      Dowiadujesz się, że bliska Ci osoba popełniła poważne przestępstwo.
+      Nie chodzi o plotkę ani domysł, ale o coś, co naprawdę się wydarzyło.
+      Milczenie może ją ochronić przed konsekwencjami.
+      Ale może też skrzywdzić innych albo sprawić,
+      że zło zostanie bez odpowiedzi.
+    choice_prompt: >
+      Co jest Ci dziś bliższe?
+    cost_question: >
+      Jeśli chronisz bliską osobę, jaką cenę mogą zapłacić skrzywdzeni?
+      A jeśli ujawnisz prawdę, jaką cenę zapłaci więź, zaufanie i Twoje własne serce?
+    hidden_cost_left: >
+      Ochrona bliskiego może wyglądać jak miłość,
+      ale jeśli pozwala krzywdzie trwać, może stać się współudziałem.
+    hidden_cost_right: >
+      Ujawnienie prawdy może być moralnie konieczne,
+      ale może też rozbić relację, której nie da się już odbudować.
+    bias_warning_left: >
+      Czy lojalność wobec jednej osoby nie zasłania Ci odpowiedzialności wobec innych?
+    bias_warning_right: >
+      Czy ujawnienie prawdy wynika z odpowiedzialności,
+      czy także z gniewu, lęku albo potrzeby odcięcia się?
+    mentor_prompt: >
+      Czy miłość do bliskiego człowieka polega na ukrywaniu jego winy,
+      czy czasem na tym, by nie pozwolić mu iść dalej tą drogą?
+    mirror_line_left: >
+      Być może ocaliłeś bliską osobę przed konsekwencjami,
+      ale warto zapytać, kto teraz ponosi koszt Twojego milczenia.
+    mirror_line_center: >
+      Skoro się wahasz, to znaczy, że rozumiesz,
+      że prawda i lojalność nie zawsze idą obok siebie spokojnie.
+    mirror_line_right: >
+      Być może wybrałeś prawdę, ale pamiętaj,
+      że prawda wypowiedziana bez miłości też może stać się narzędziem zniszczenia.
+    help_hint: >
+      W takiej sytuacji pierwszy krok nie musi oznaczać samotnej decyzji.
+      Można porozmawiać z kimś zaufanym, prawnikiem, terapeutą,
+      osobą duchowną albo kimś, kto pomoże rozpoznać ciężar sprawy.
+    bridge_prompt: >
+      Jak odpowiedziałby ktoś skrzywdzony, kto czekał na prawdę?
+      Jak odpowiedziałby ktoś, kto kocha winnego człowieka i nie chce go stracić?
+    tags_left:
+      - lojalność
+      - rodzina
+      - milczenie
+      - ochrona
+    tags_right:
+      - prawda
+      - sprawiedliwość
+      - odpowiedzialność
+      - konsekwencje
+
+  - id: slad_06
+    axis_id: sprawiedliwosc_wiez
+    axis_left: Kierować się zasadą
+    axis_right: Ratować tego, kogo znasz
+    title: Jedno miejsce w szpitalu
+    scenario: >
+      W szpitalu zostaje jedno miejsce na intensywnej terapii.
+      Dwóch pacjentów potrzebuje pomocy natychmiast.
+      Jeden ma większe szanse przeżycia według medycznych kryteriów.
+      Drugi jest osobą, którą znasz i bardzo cenisz.
+      Decyzja musi zapaść szybko.
+    choice_prompt: >
+      Co jest Ci dziś bliższe?
+    cost_question: >
+      Jeśli kierujesz się zasadą, jaką cenę płaci Twoja więź z konkretnym człowiekiem?
+      A jeśli ratujesz tego, kogo znasz, jaką cenę płaci sprawiedliwość wobec nieznajomego?
+    hidden_cost_left: >
+      Zasada może chronić sprawiedliwość,
+      ale może też zostawić w Tobie ból człowieka, który nie pomógł komuś bliskiemu.
+    hidden_cost_right: >
+      Więź może wołać najgłośniej,
+      ale nie czyni życia bliskiej osoby ważniejszym od życia nieznajomego.
+    bias_warning_left: >
+      Czy zasada nie staje się dla Ciebie tarczą przed osobistym bólem?
+    bias_warning_right: >
+      Czy bliskość nie sprawia, że widzisz jedno życie wyraźniej niż drugie?
+    mentor_prompt: >
+      Czy sprawiedliwość zaczyna się tam, gdzie własne serce nie może być jedynym sędzią?
+    mirror_line_left: >
+      Być może wybrałeś zasadę,
+      ale nie udawaj, że ten wybór nie zostawia śladu w człowieku.
+    mirror_line_center: >
+      Skoro stoisz pośrodku, być może czujesz,
+      że każda odpowiedź kogoś pomniejsza i żadna nie daje czystych rąk.
+    mirror_line_right: >
+      Być może wybrałeś więź,
+      ale warto zapytać, czy nieznajomy człowiek nie miał takiego samego prawa do życia.
+    help_hint: >
+      W prawdziwych sytuacjach granicznych właśnie dlatego tworzy się procedury,
+      zespoły i kryteria: żeby pojedyncze serce nie musiało samo udawać całej sprawiedliwości.
+    bridge_prompt: >
+      Jak odpowiedziałby lekarz, który musi stosować zasadę?
+      Jak odpowiedziałby ktoś, kto patrzy na twarz bliskiego człowieka?
+    tags_left:
+      - zasada
+      - sprawiedliwość
+      - procedura
+      - bezstronność
+    tags_right:
+      - więź
+      - bliskość
+      - ratunek
+      - serce
+
+  - id: slad_07
+    axis_id: przyjazn_zycie
+    axis_left: Nie psuć relacji
+    axis_right: Zatrzymać za wszelką cenę
+    title: Przyjaciel po alkoholu
+    scenario: >
+      Bliski przyjaciel chce prowadzić samochód po alkoholu.
+      Prosi, żebyś nie robił sceny, bo „da radę”.
+      Wiesz, że jeśli go zatrzymasz, może się na Ciebie wściec
+      i zerwać kontakt. Jeśli nic nie zrobisz, ktoś może zginąć.
+    choice_prompt: >
+      Co jest Ci dziś bliższe?
+    cost_question: >
+      Jeśli nie psujesz relacji, jaką cenę może zapłacić ktoś niewinny?
+      A jeśli zatrzymasz przyjaciela za wszelką cenę,
+      jaką cenę może zapłacić Wasza relacja?
+    hidden_cost_left: >
+      Spokój między przyjaciółmi może być bardzo kruchy,
+      jeśli został kupiony ryzykiem czyjegoś życia.
+    hidden_cost_right: >
+      Zatrzymanie przyjaciela może ocalić życie,
+      ale może też sprawić, że przez jakiś czas będziesz dla niego zdrajcą.
+    bias_warning_left: >
+      Czy nie nazywasz lojalnością czegoś, co jest lękiem przed konfliktem?
+    bias_warning_right: >
+      Czy pamiętasz, że zatrzymując kogoś, trzeba nadal widzieć w nim człowieka,
+      a nie tylko zagrożenie?
+    mentor_prompt: >
+      Czy prawdziwa przyjaźń czasem musi powiedzieć „nie” właśnie dlatego,
+      że nie chce pozwolić człowiekowi zniszczyć siebie albo innych?
+    mirror_line_left: >
+      Być może ocaliłeś relację na dziś,
+      ale pytanie brzmi, czy nie oddałeś za nią zbyt wiele komuś, kto może spotkać go na drodze.
+    mirror_line_center: >
+      Skoro się wahasz, to znaczy, że widzisz i człowieka,
+      i zagrożenie. Teraz trzeba zapytać, które dobro nie może czekać.
+    mirror_line_right: >
+      Być może straciłeś spokój, wdzięczność albo przyjaźń na jakiś czas,
+      ale czasem odpowiedzialność wygląda właśnie jak samotne „nie”.
+    help_hint: >
+      W praktyce można zabrać kluczyki, wezwać taksówkę,
+      poprosić innych o pomoc albo zadzwonić po służby.
+      Tu nie chodzi o wygraną w kłótni, tylko o to, żeby nikt nie zginął.
+    bridge_prompt: >
+      Jak odpowiedziałby ktoś, kto stracił bliskiego przez pijanego kierowcę?
+      Jak odpowiedziałby przyjaciel następnego dnia, gdyby naprawdę zrozumiał, co mogło się stać?
+    tags_left:
+      - relacja
+      - unikanie
+      - lojalność
+      - spokój
+    tags_right:
+      - życie
+      - odpowiedzialność
+      - reakcja
+      - zatrzymanie

@@ -30,20 +30,89 @@ sumienie_reguly:
 
 grupa_czlowiek:
   default_comment: >
-    Sowa zapytałaby, czy wygoda grupy naprawdę jest spokojem,
-    jeśli ktoś słabszy zostaje z tym sam.
+    Czy wygoda grupy naprawdę jest spokojem,
+    jeśli ktoś słabszy zostaje z tym sam?
 
 milczenie_reakcja:
   default_comment: >
-    Sowa zapytałaby, czy cisza naprawdę chroni spokój,
-    czy tylko pozwala krzywdzie trwać dłużej.
+    Czy cisza naprawdę chroni spokój,
+    czy tylko pozwala krzywdzie trwać dłużej?
 
 sekret_pomoc:
   default_comment: >
-    Sowa zapytałaby, czy zatrzymanie sekretu dla siebie pomaga,
-    jeśli ktoś zostaje sam z czymś zbyt trudnym.
+    Czy zatrzymanie sekretu dla siebie pomaga,
+    jeśli ktoś zostaje sam z czymś zbyt trudnym?
 
 spokoj_nazwanie:
   default_comment: >
-    Sowa zapytałaby, czy udawanie spokoju naprawdę rozwiązuje problem,
-    czy tylko odsuwa moment, w którym trzeba go nazwać.
+    Czy udawanie spokoju naprawdę rozwiązuje problem,
+    czy tylko odsuwa moment, w którym trzeba go nazwać?
+
+prawda_nadzieja:
+  default_comment: >
+    Musimy mieć jakąś nadzieję.
+
+    Ale nadzieja nie musi oznaczać kłamstwa.
+    Czasem nie trzeba mówić wszystkiego naraz.
+    Czasem prawdziwsze od informacji jest bycie obok,
+    trzymanie za rękę i niewypowiadanie słów,
+    które nie niosą już pomocy.
+
+    Prawda bez miłości może stać się okrucieństwem.
+    Miłość bez prawdy może stać się samotnością.
+
+misja_czlowieczenstwo:
+  default_comment: >
+    Najgroźniejsze decyzje to czasem te,
+    które udają, że istnieją tylko dwie możliwości.
+
+    Między wypuszczeniem chłopca a odebraniem mu życia
+    może istnieć trzecia droga:
+    unieruchomić go tak, by nie mógł ostrzec przeciwnika,
+    a po zakończeniu misji przekazać, gdzie jest.
+
+    To nadal decyzja bolesna.
+    Ale człowieczeństwo często zaczyna się właśnie tam,
+    gdzie ktoś w ostatniej chwili nie przestaje szukać
+    mniej strasznego wyjścia.
+
+lojalnosc_sprawiedliwosc:
+  default_comment: >
+    Lojalność wobec jednej osoby nie może całkiem unieważnić
+    odpowiedzialności wobec skrzywdzonych.
+
+    Nie każde ujawnienie prawdy jest zdradą.
+    Czasem zdradą jest udawanie, że prawdy nie ma.
+
+    Stara zasada mówi: nie wolno czynić zła,
+    żeby wynikło z niego dobro.
+    Milczenie może wyglądać jak miłość,
+    ale jeśli pozwala krzywdzie trwać dalej,
+    staje się współudziałem.
+
+sprawiedliwosc_wiez:
+  default_comment: >
+    Sprawiedliwość zaczyna się tam,
+    gdzie własne serce nie może być jedynym sędzią.
+
+    To, że ktoś jest nam bliski,
+    nie czyni jego życia ważniejszym od życia nieznajomego.
+    Ale to, że ktoś jest nieznajomy,
+    nie czyni jego życia mniej realnym.
+
+    Najtrudniejsze decyzje wymagają zasad właśnie dlatego,
+    że uczucia potrafią być zbyt silne.
+
+przyjazn_zycie:
+  default_comment: >
+    Przyjaźń, która nigdy nie mówi „nie”,
+    może stać się wygodnym opuszczeniem człowieka w chwili próby.
+
+    Czasem lojalność nie polega na tym,
+    że stoimy po czyjejś stronie.
+    Czasem polega na tym,
+    że stajemy między nim a krzywdą,
+    którą może wyrządzić sobie albo innym.
+
+    Gniew przyjaciela może minąć.
+    Śmierć niewinnego człowieka nie mija.
